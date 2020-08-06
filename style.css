@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+/* Global Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Colors */
+  --PrimaryColor: #003459;
+  --Dark1: #00171f;
+  --Dark2: #001829;
+  --Light1: #007ea7;
+  --Light2: #00a8e8;
+  --Cta1: #ff8484;
+  --Cta2: #cc2936;
+  /* Others */
+  --MainTransition: all 0.3s linear;
+  --MainFont: 'Roboto', sans-serif;
+  --PLineHeight: 1.5;
+}
+body {
+  font-family: var(--MainFont);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+/* Header */
+/* Nav Mobile */
+.nav-links {
+  display: none; /*Ocultamos el NONE mientras trabajamos, para verlos*/
+}
+.nav-links a {
+  display: block;
+  padding: 1.25rem;
+  background: var(--Dark2);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--Light1);
+  font-weight: 900;
+  transition: var(--MainTransition);
+}
+.nav-links a:hover {
+  background: var(--Light1);
+  color: var(--Light2);
+  padding-left: 2.5rem;
+  border-left: 0.75rem solid var(--PrimaryColor);
+}
+.nav-icons {
+  display: none;
+}
+/*Logo + Hamburguer*/
+.nav-container {
+  padding: 0 2rem;
+  background: rgba(200, 227, 253, 0.7);
+  border-bottom: 5px solid var(--PrimaryColor);
+  display: flex;
+  justify-content: space-between; /*Separamos Logo de la Hamburger*/
+  align-items: baseline;
+}
+/* Logo */
+.nav-container img {
+  width: 5rem;
+  align-self: center;
+  padding: 0.5rem 0;
+}
+/* hamburguer */
+.bar1,
+.bar2,
+.bar3 {
+  width: 1.75rem;
+  height: 4px;
+  margin: 5px;
+  background: var(--PrimaryColor);
+  border-radius: 3px;
+  transition: var(--MainTransition);
+}
+.hamburger-btn {
+  border: 4px solid var(--PrimaryColor);
+  padding: 2px;
+  display: inline-block;
+  cursor: pointer;
+  align-self: center;
+}
+/* Class that change the hamburger */
+.change .bar1 {
+  transform: translateY(5px);
+  opacity: 0;
+}
+.change .bar2 {
+  background: var(--Cta2);
+}
+.change .bar3 {
+  transform: translateY(-5px);
+  opacity: 0;
+}
+/* Section Header */
+header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(./img/header-bcg.jpeg) center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column; /*para volver al estado inicial*/
+}
+nav {
+  flex: 0 0 auto; /*para que nada cambie de la NAv*/
+}
+.banner {
+  flex: 1 0 auto; /*Hace crecer el bg de sus child (textos)*/
+  display: flex; /*Poner Texto al centro*/
+  align-items: center;
+  justify-content: center;
+}
+.banner-card {
+  flex: 0 0 90%; /*ocupe maximo un 90%*/
+  text-align: center; /*volvemos a alinear al centro*/
+  padding: 4rem 0;
+  outline: 1px solid var(--Light2);
+  background: rgba(226, 241, 255, 0.4);
+  outline-offset: -0.75rem;
+}
+.banner-card h1 {
+  font-size: 2.5rem;
+  color: var(--Dark1);
+  font-style: italic;
+  text-transform: uppercase;
+}
+.banner-card span {
+  color: var(--Dark2);
+}
+.banner-card h3 {
+  letter-spacing: 0.3rem;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 992px) {
+  .hamburger-btn {
+    /*Sacamos HMBG*/
+    display: none;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nav-container {
+    background: transparent;
+    border-bottom: none;
+    flex: 0 0 auto;
+  }
+  .nav-links {
+    display: flex !important;
+    flex: 1 0 auto;
+    padding: 0 1.25rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .nav-links li {
+    flex: 1 0 auto; /*Agrandamos los LINKS*/
+  }
+  .nav-links a {
+    background: transparent;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1.5rem 0.75rem;
+    color: #fff;
+  }
+  .nav-links a:hover {
+    background: rgba(200, 227, 253, 0.2);
+    border-left: none;
+    padding: 1.5rem 0.75rem;
+    color: #fff;
+  }
+  .nav-icons {
+    display: flex;
+    flex: 1 0 auto;
+  }
+}
