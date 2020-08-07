@@ -59,14 +59,13 @@ ul {
   background: rgba(200, 227, 253, 0.7);
   border-bottom: 5px solid var(--PrimaryColor);
   display: flex;
-  justify-content: space-between; /*Separamos Logo de la Hamburger*/
-  align-items: baseline;
+  justify-content: space-between;
 }
 /* Logo */
 .nav-container img {
   width: 5rem;
-  align-self: center;
   padding: 0.5rem 0;
+  align-self: center;
 }
 /* hamburguer */
 .bar1,
@@ -111,7 +110,7 @@ nav {
 }
 .banner {
   flex: 1 0 auto; /*Hace crecer el bg de sus child (textos)*/
-  display: flex; /*Poner Texto al centro*/
+  display: flex; /*Poner Texto (child) al centro*/
   align-items: center;
   justify-content: center;
 }
@@ -143,8 +142,13 @@ nav {
   }
   .nav {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: space-between;
+  }
+  .nav-container img {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
   }
   .nav-container {
     background: transparent;
@@ -152,30 +156,48 @@ nav {
     flex: 0 0 auto;
   }
   .nav-links {
-    display: flex !important;
+    padding: 0 2rem 0 15rem;
     flex: 1 0 auto;
-    padding: 0 1.25rem;
+    display: flex !important;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
   .nav-links li {
-    flex: 1 0 auto; /*Agrandamos los LINKS*/
+    flex: 1 0 auto;
   }
   .nav-links a {
     background: transparent;
     text-align: center;
-    border-radius: 5px;
-    padding: 1.5rem 0.75rem;
+    border-radius: 3px;
     color: #fff;
   }
   .nav-links a:hover {
-    background: rgba(200, 227, 253, 0.2);
+    background: #00171fa4;
+    color: var(--Light2);
+    padding: 1.25rem;
     border-left: none;
-    padding: 1.5rem 0.75rem;
-    color: #fff;
   }
   .nav-icons {
-    display: flex;
     flex: 1 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-self: center;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.1)
+    );
+  }
+  .nav-icons a {
+    color: var(--Cta2);
+    padding: 0.75rem;
+    font-size: 2rem;
+    margin-right: 0.75rem;
+  }
+  .nav-icons a:hover {
+    color: var(--Cta1);
+    padding: 0.75rem;
+    font-size: 2rem;
+    margin-right: 0.75rem;
   }
 }
